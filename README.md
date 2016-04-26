@@ -2,6 +2,7 @@ ArcIBM:
 The Arctic copepod Individual-Based Model (ArcIBM) is a modified version of a generic Lagrangian tracking and zooplankton life-stage-based biological model [Ji et al., 2012]. The basic functionality of this model is to evolve copepods both physically (i.e., advection) and biologically (i.e., aging, maturation, and life stage development).
 
 Refer to the following publication: 
+
 Feng, Z., R. Ji., R.G. Campbell, C.J. Ashjian, and J. Zhang, 2016. Early ice retreat and ocean warming may induce copepod biogeographic boundary shifts in the Arctic Ocean. submitted to Journal of Geophysical Research.
 
 
