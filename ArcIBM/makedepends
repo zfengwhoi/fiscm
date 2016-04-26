@@ -1,0 +1,14 @@
+gparms.o : gparms.f90 
+utilities.o : utilities.f90 gparms.o 
+mod_pvar.o : mod_pvar.f90 utilities.o gparms.o 
+mod_igroup.o : mod_igroup.f90 utilities.o mod_pvar.o gparms.o 
+mod_bio.o : mod_bio.f90 mod_output.o mod_igroup.o gparms.o
+mod_setup.o: mod_setup.f90 mod_output.o mod_forcing.o utilities.o 
+mod_driver.o : mod_driver.f90 mod_bio.o fvcom_driver.o biomas_driver.o mod_igroup.o gparms.o 
+mod_output.o : mod_output.f90 mod_igroup.o gparms.o 
+mod_forcing.o : mod_forcing.f90 utilities.o mod_igroup.o gparms.o
+biomas_driver.o: biomas_driver.f90 gparms.o utilities.o mod_forcing.o mod_igroup.o
+mod_unstructured_compute.o: mod_unstructured_compute.f90 mod_igroup.o mod_driver.o mod_bio.o mod_output.o mod_forcing.o utilities.o gparms.o
+mod_structured_compute.o:   mod_structured_compute.f90   mod_igroup.o mod_driver.o mod_bio.o mod_output.o mod_forcing.o utilities.o gparms.o
+fvcom_driver.o : fvcom_driver.f90 utilities.o mod_forcing.o mod_igroup.o gparms.o
+ArcIBM.o : ArcIBM.f90 utilities.o mod_setup.o mod_output.o mod_bio.o mod_driver.o mod_forcing.o mod_igroup.o gparms.o mod_structured_compute.o mod_unstructured_compute.o
